@@ -19,7 +19,6 @@ header {
 .header__buttons{
     padding-top: 30px;
     padding-bottom: 30px;
-    padding-right: 40px;
 }
 
 .category-btn {
@@ -27,12 +26,17 @@ header {
     border: none;
     background-color: #1B254E;
     color: white;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    transition: all 0.3s ease;
 }
 
 .category-btn:hover {
-    color: #F47921;
+    color: #1FBAE5;
     box-shadow: none;
     position: relative;
+    transition: all 0.5s ease;
+    cursor: pointer;
 }
 
 .header__body {
