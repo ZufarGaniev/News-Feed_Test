@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>НовостиБeacon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/CSS/main.css">
+</head>
+<body>
+    <header>
+        <div class="header__container">
+            <div class="header__body">
+
+                <div class="header__logo">
+                    <a class="header__img" href="#"><img src="/img/header__img__logo.png" alt="logo"/></a>
+                    <a  class="header__logo_text href="#">НовостиБeacon</a>
+                </div>
+
+                <div class="header__buttons">
+                    <nav class="header__filer__category" id="category-filter">
+                        <button class="category-btn active" data-category="all">Все</button>
+                        <button class="category-btn" data-category="business">Экономика</button>
+                        <button class="category-btn" data-category="politics">Политика</button>
+                        <button class="category-btn" data-category="entertainment">Культура</button>
+                        <button class="category-btn" data-category="sports">Спорт</button>
+                    </nav>
+                </div>
+                
+
+            </div>
+        </div>
+        
+      </header>
+
+      <main id="news-container" style="padding: 20px;"></main>
+
+
+      <script src="/src/getNewsFetch.js" type="module"></script>
+</body>
+</html>
