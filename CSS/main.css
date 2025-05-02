@@ -22,13 +22,14 @@ header {
 }
 
 .category-btn {
-    margin-right: 20px;
+    margin-right: 30px;
     border: none;
     background-color: #1B254E;
     color: white;
     font-family: "Inter", sans-serif;
     font-size: 15px;
     transition: all 0.3s ease;
+    padding: 0;
 }
 
 .category-btn:hover {
@@ -104,3 +105,8 @@ header {
     text-decoration: underline;
   }
   
+  .news__card {
+    max-width: 1450px;
+    width: 100%;
+    margin: 0 auto;
+  }

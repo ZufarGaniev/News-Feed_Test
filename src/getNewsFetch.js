@@ -28,16 +28,19 @@ function renderNews(articles) {
   const container = document.getElementById('news-container');
   container.innerHTML = '';
 
-  if (!articles.length) {
-    container.innerHTML = '<p>Нет новостей по выбранной категории.</p>';
+  // Фильтруем статьи, у которых есть изображение
+  const filtered = articles.filter(article => article.urlToImage);
+
+  if (!filtered.length) {
+    container.innerHTML = '<p>Нет новостей с изображениями по выбранной категории.</p>';
     return;
   }
 
-  articles.forEach((article) => {
+  filtered.forEach((article) => {
     const card = document.createElement('div');
     card.className = 'news-card';
     card.innerHTML = `
-      <img src="${article.urlToImage || 'https://via.placeholder.com/300x180?text=No+Image'}" alt="Image" class="news-image">
+      <img src="${article.urlToImage}" alt="Изображение" class="news-image">
       <div class="news-content">
         <h3>${article.title}</h3>
         <p>${article.description || 'Описание отсутствует'}</p>
@@ -51,18 +54,25 @@ function renderNews(articles) {
 // Обработчик кнопок
 document.addEventListener('DOMContentLoaded', () => {
   const nav = document.getElementById('category-filter');
+
   nav.addEventListener('click', (e) => {
     if (e.target.tagName === 'BUTTON') {
+      // Снимаем выделение со всех
       document.querySelectorAll('.category-btn').forEach(btn =>
         btn.classList.remove('active')
       );
+
+      // Добавляем активность текущей
       e.target.classList.add('active');
 
+      // Загружаем новости по выбранной категории
       const category = e.target.dataset.category;
       getNews(category);
     }
   });
 
-  getNews(); // Загружаем по умолчанию "все"
+  // Загружаем "Все" по умолчанию
+  getNews();
 });
+
 
