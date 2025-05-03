@@ -58,6 +58,12 @@ header {
   height: 35px;
 }
 
+.category-btn.active {
+  color: orange;
+  border-bottom: 2px solid orange;
+}
+
+
 /* .header__filer__category{
   display: flex;
   justify-content: end;
