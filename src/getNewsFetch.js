@@ -25,7 +25,7 @@ async function getNews(category = '') {
 }
 
 function renderNews(articles) {
-  const container = document.getElementById('news-container');
+  const container = document.getElementById('grid-container');
   container.innerHTML = '';
 
   // Фильтруем статьи, у которых есть изображение

@@ -1,5 +1,7 @@
 import { renderNews } from '../src/renderNews';
 
+const { renderNews } = require('../src/renderNews');
+
 describe('renderNews', () => {
   beforeEach(() => {
     document.body.innerHTML = '<div id="news-container"></div>';
@@ -15,7 +17,7 @@ describe('renderNews', () => {
     const cards = document.querySelectorAll('.news-card');
     expect(cards.length).toBe(1);
     expect(cards[0].innerHTML).toContain('Новость 1');
-    expect(cards[0].innerHTML).toContain('<img');
+    expect(cards[0].innerHTML).toContain('<img>');
   });
 
   it('должен пропустить новости без изображения', () => {
@@ -36,3 +38,5 @@ describe('renderNews', () => {
     expect(container.innerHTML).toContain('Нет новостей');
   });
 });
+
+module.exports = { renderNews };
