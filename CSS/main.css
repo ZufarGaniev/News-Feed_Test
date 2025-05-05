@@ -2,12 +2,18 @@ body * {
   text-decoration: none;
 }
 
-body {
+html, body {
+  height: 100%;
   margin: 0;
+  padding: 0;
 }
 
 header {
   background-color: #1B254E;
+}
+
+footer {
+  margin-top: auto;
 }
 
 .header__container{
@@ -145,11 +151,11 @@ text-decoration: underline;
 }
 
 
+
 .footer {
-  background-color: #0e1d49;
+  background-color: #1B254E;
   color: white;
   font-family: "Inter", sans-serif;
-  padding: 40px 20px 0;
 }
 
 .footer__container {
@@ -178,16 +184,17 @@ text-decoration: underline;
 
 .footer__logo-icon {
   font-size: 20px;
+  padding-top: 40px;
 }
 
 .footer__logo-text {
+  padding-top: 40px;
   color: white;
 }
 
 .footer__description {
-  font-size: 14px;
+  font-size: 20px;
   line-height: 1.4;
-  margin: 0;
 }
 
 .footer__columns {
@@ -195,6 +202,7 @@ text-decoration: underline;
   flex: 2;
   gap: 60px;
   flex-wrap: wrap;
+  padding-top: 20px;
 }
 
 .footer__columns div {
@@ -224,8 +232,9 @@ text-decoration: underline;
 }
 
 .footer__copyright {
-  background-color: #09142e;
+  background-color: #181F37;
   text-align: center;
+  color: #8F8A94;
   width: 100%;
   font-size: 12px;
   padding: 12px 0;
