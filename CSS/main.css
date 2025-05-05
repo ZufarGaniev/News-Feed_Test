@@ -6,17 +6,18 @@ body {
   margin: 0;
 }
 
+/*Хедер*/
 header {
   background-color: #1B254E;
 }
 
-.header__container{
+.header__container {
   max-width: 1450px;
   width: 100%;
   margin: 0 auto;
 }
 
-.header__buttons{
+.header__buttons {
   padding-top: 30px;
   padding-bottom: 30px;
 }
@@ -76,80 +77,82 @@ header {
   align-items: center;
 }
 
+/*Основной контент*/
 .news__card {
-max-width: 1450px;
-width: 100%;
-margin: 0 auto;
-padding: 40px 20px;
-box-sizing: border-box;
+  max-width: 1450px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 20px;
+  box-sizing: border-box;
 }
 
-/* Сетка карточек 3x3 */
+/* Сетка карточек*/
 .grid {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 32px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
 }
 
-/* Оформление карточек */
 .news-card {
-background: white;
-border-radius: 10px;
-overflow: hidden;
-box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-display: flex;
-flex-direction: column;
-transition: transform 0.2s ease;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
 }
 
 .news-card:hover {
-transform: translateY(-4px);
+  transform: translateY(-4px);
 }
 
 .news-image {
-width: 100%;
-height: 180px;
-object-fit: cover;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
 }
+
 .news-content {
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-padding: 20px;
-height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  height: auto;
 }
 
 .news-content h3 {
-font-size: 18px;
-margin: 0 0 12px;
-font-weight: 700;
-color: #1B254E;
+  font-size: 18px;
+  margin: 0 0 12px;
+  font-weight: 700;
+  color: #1B254E;
 }
 
 .news-content p {
-font-size: 14px;
-margin: 0 0 12px;
-color: #555;
-flex-grow: 1;
-line-height: 1.5;
+  font-size: 14px;
+  margin: 0 0 12px;
+  color: #555;
+  flex-grow: 1;
+  line-height: 1.5;
 }
 
 .news-content a {
-color: #0077ff;
-font-weight: 500;
-text-decoration: none;
+  color: #0077ff;
+  font-weight: 500;
+  text-decoration: none;
 }
 
 .news-content a:hover {
-text-decoration: underline;
+  text-decoration: underline;
 }
+/*Футер*/
 
 
 .footer {
   background-color: #0e1d49;
   color: white;
   font-family: "Inter", sans-serif;
-  padding: 40px 20px 0;
+  padding: 40px 0 0;
 }
 
 .footer__container {
@@ -157,14 +160,14 @@ text-decoration: underline;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 40px;
-  padding-left: 150px;
+  padding: 0 20px;
 }
 
 .footer__logo-section {
   flex: 1;
-  min-width: 250px;
+  min-width: 200px;
+  padding-left: 40px;
+  margin-top: 25px;
 }
 
 .footer__logo {
@@ -172,37 +175,42 @@ text-decoration: underline;
   align-items: center;
   gap: 10px;
   font-weight: 800;
-  font-size: 24px;
+  font-size: 32px;
   margin-bottom: 10px;
 }
 
 .footer__logo-icon {
-  font-size: 20px;
+  margin: 0;
 }
 
 .footer__logo-text {
   color: white;
 }
 
+.footer__logo-section {
+  flex: 1;
+  min-width: 300px;
+}
+
 .footer__description {
   font-size: 14px;
   line-height: 1.4;
   margin: 0;
+  padding-left: 30px
 }
 
 .footer__columns {
   display: flex;
   flex: 2;
   gap: 60px;
-  flex-wrap: wrap;
+  margin-right: 30px;
 }
-
 .footer__columns div {
   min-width: 180px;
 }
 
 .footer h4 {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 600;
   margin-bottom: 10px;
 }
@@ -216,18 +224,55 @@ text-decoration: underline;
 .footer ul li {
   margin-bottom: 6px;
   font-size: 14px;
+  font-weight: 200;
 }
 
 .footer p {
   font-size: 14px;
   margin: 6px 0;
+  font-weight: 200;
 }
 
 .footer__copyright {
   background-color: #09142e;
   text-align: center;
-  width: 100%;
   font-size: 12px;
   padding: 12px 0;
   margin-top: 30px;
+  width: 100%;
+  color: #8F8A94;
+}
+
+.footer__container {
+  max-width: 1450px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.footer__logo-section {
+  flex: 1;
+  min-width: 300px;
+}
+
+.footer__columns {
+  display: flex;
+  flex: 2;
+  gap: 60px;
+}
+
+.footer__columns div {
+  min-width: 150px;
+}
+
+.footer__copyright {
+  background-color: #09142e;
+  text-align: center;
+  font-size: 12px;
+  padding: 12px 0;
+  margin-top: 30px;
+  width: 100%;
+  color: #8F8A94;
+  position: relative;
 }
