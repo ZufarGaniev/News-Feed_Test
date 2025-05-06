@@ -1,7 +1,9 @@
 const API_KEY = 'pub_8501869c09275ad14ce7a068052c754a53d05';
 
 async function getNews(category = 'top') {
-  const url = `https://newsdata.io/api/1/news?country=ru&language=ru&category=${category}&apikey=${API_KEY}`;
+  const url = category === 'all'
+  ? `https://newsdata.io/api/1/news?country=ru&language=ru&apikey=${API_KEY}`
+  : `https://newsdata.io/api/1/news?country=ru&language=ru&category=${category}&apikey=${API_KEY}`;
 
   try {
     const response = await fetch(url);
