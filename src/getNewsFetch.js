@@ -1,55 +1,47 @@
-const API_KEY = '4cf28bac2f444cbbaf5179b3fd73cc65';
-let allArticles = [];
+const API_KEY = 'pub_8501869c09275ad14ce7a068052c754a53d05';
 
-async function getNews(category = '') {
-  const baseUrl = 'https://newsapi.org/v2/top-headlines';
-  const params = new URLSearchParams({
-    apiKey: API_KEY,
-    country: 'us',  
-  });
-
-  if (category && category !== 'all') {
-    params.append('category', category);
-  }
-
-  const url = `${baseUrl}?${params.toString()}`;
+async function getNews(category = 'top') {
+  const url = `https://newsdata.io/api/1/news?country=ru&language=ru&category=${category}&apikey=${API_KEY}`;
 
   try {
     const response = await fetch(url);
     const data = await response.json();
-    allArticles = data.articles || [];
-    renderNews(allArticles);
+
+    const articles = data.results || [];
+    renderNews(articles);
   } catch (err) {
-    console.error('Ошибка при получении данных:', err);
+    console.error('Ошибка при получении новостей:', err);
+    renderNews([]); // пустой вывод
   }
 }
+
 
 function renderNews(articles) {
   const container = document.getElementById('grid-container');
   container.innerHTML = '';
 
-  // Фильтруем статьи, у которых есть изображение
-  const filtered = articles.filter(article => article.urlToImage);
+  const validArticles = articles.filter(a => a.image_url); // только с изображениями
 
-  if (!filtered.length) {
+  if (!validArticles.length) {
     container.innerHTML = '<p>Нет новостей с изображениями по выбранной категории.</p>';
     return;
   }
 
-  filtered.forEach((article) => {
+  validArticles.forEach(article => {
     const card = document.createElement('div');
     card.className = 'news-card';
     card.innerHTML = `
-      <img src="${article.urlToImage}" alt="Изображение" class="news-image">
+      <img src="${article.image_url}" alt="Изображение" class="news-image" />
       <div class="news-content">
         <h3>${article.title}</h3>
         <p>${article.description || 'Описание отсутствует'}</p>
-        <a href="${article.url}" target="_blank">Читать далее</a>
+        <a href="${article.link}" target="_blank">Читать далее</a>
       </div>
     `;
     container.appendChild(card);
   });
 }
+
 
 // Обработчик кнопок
 document.addEventListener('DOMContentLoaded', () => {
@@ -57,22 +49,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   nav.addEventListener('click', (e) => {
     if (e.target.tagName === 'BUTTON') {
-      // Снимаем выделение со всех
       document.querySelectorAll('.category-btn').forEach(btn =>
         btn.classList.remove('active')
       );
-
-      // Добавляем активность текущей
       e.target.classList.add('active');
 
-      // Загружаем новости по выбранной категории
       const category = e.target.dataset.category;
       getNews(category);
     }
   });
 
-  // Загружаем "Все" по умолчанию
-  getNews();
+  getNews(); // Загрузить "top" по умолчанию
 });
+
 
 
