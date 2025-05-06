@@ -6,6 +6,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 /* Хедер */
@@ -17,11 +18,56 @@ header {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+@media (max-width: 1520px) {
+  .header__container,
+  .footer__container {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+
+  .header__buttons button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .news__card{
+    max-width: 1450px;
+    width: 80%;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  .news-card h3 {
+    font-size: 16px;
+  }
+
+  .news-card p {
+    font-size: 14px;
+  }
+
+  .video iframe {
+    width: 100%;
+    height: auto;
+  }
+
+  .footer__columns {
+    flex-wrap: wrap;
+  }
+
+  .footer__column {
+    flex: 1 1 45%;
+    margin-bottom: 20px;
+  }
+}
+
 
 .header__container {
   max-width: 1450px;
-  width: 100%;
-  margin: 0 auto;
+  width: 80%;
+  margin: 0 auto; 
 }
 
 .header__buttons {
@@ -75,12 +121,13 @@ header {
   display: flex;
   gap: 10px;
   align-items: center;
+  margin-left: 20px;
 }
 
 /* Основной контент */
 .news__card {
   max-width: 1450px;
-  width: 100%;
+  width: 80%;
   margin: 0 auto;
   padding: 40px 20px 0; /* Удалён нижний отступ */
   box-sizing: border-box;
