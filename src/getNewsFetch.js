@@ -22,7 +22,7 @@ function renderNews(articles) {
   const container = document.getElementById('grid-container');
   container.innerHTML = '';
 
-  const validArticles = articles.filter(a => a.image_url); // только с изображениями
+  const validArticles = articles;
 
   if (!validArticles.length) {
     container.innerHTML = '<p>Нет новостей с изображениями по выбранной категории.</p>';
@@ -33,7 +33,7 @@ function renderNews(articles) {
     const card = document.createElement('div');
     card.className = 'news-card';
     card.innerHTML = `
-      <img src="${article.image_url}" alt="Изображение" class="news-image" />
+      <img src="${article.image_url || '/img/Заглушка.png'}"  alt="Изображение" class="news-image" />
       <div class="news-content">
         <h3>${article.title}</h3>
         <p>${article.description || 'Описание отсутствует'}</p>
