@@ -148,6 +148,7 @@ header {
   box-shadow: 0 4px 12px rgba(0,0,0,0.06);
   display: flex;
   flex-direction: column;
+  height: 100%;
   transition: transform 0.2s ease;
 }
 
@@ -164,9 +165,8 @@ header {
 .news-content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  flex-grow: 1;
   padding: 20px;
-  height: auto;
 }
 
 .news-content h3 {
@@ -181,6 +181,7 @@ header {
   margin: 0 0 12px;
   color: #555;
   flex-grow: 1;
+  margin-bottom: 12px;
   line-height: 1.5;
   display: -webkit-box;
   -webkit-line-clamp: 4;
@@ -191,27 +192,23 @@ header {
 
 
 .news-content a {
+  margin-top: auto; /* ключ к успеху */
   color: #0077ff;
   font-weight: 500;
   text-decoration: none;
 }
+
 
 .news-content a:hover {
   text-decoration: underline;
 }
 
 /* LIVE секция */
-.live__card {
+
+.live {
   max-width: 1450px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 20px 50px; /* Добавлен padding, убран margin */
-  box-sizing: border-box;
-}
-
-.live {
-  width: 560px;
-  margin: 20px 0 50px 0;
 }
 
 .live h2 {
@@ -223,7 +220,6 @@ header {
   background: white;
   padding: 0;
   padding-bottom: 10px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
   position: relative;
   margin-bottom: 10px;
 }
