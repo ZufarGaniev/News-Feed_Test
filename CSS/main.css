@@ -82,7 +82,7 @@ header {
   max-width: 1450px;
   width: 100%;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 40px 20px 0; /* Удалён нижний отступ */
   box-sizing: border-box;
 }
 
@@ -154,9 +154,17 @@ header {
 }
 
 /* LIVE секция */
+.live__card {
+  max-width: 1450px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px 50px; /* Добавлен padding, убран margin */
+  box-sizing: border-box;
+}
+
 .live {
   width: 560px;
-  margin: 20px 0 50px 60px;
+  margin: 20px 0 50px 0;
 }
 
 .live h2 {
@@ -189,9 +197,9 @@ header {
 
 .subtext {
   font-family: "Inter", sans-serif;
-  font-size: 10px;
+  font-size: 14px;
   margin-top: 10px;
-  font-weight: 100;
+  font-weight: 200;
 }
 
 .live__text {
