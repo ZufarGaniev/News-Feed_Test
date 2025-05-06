@@ -130,7 +130,13 @@ header {
   color: #555;
   flex-grow: 1;
   line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
 
 .news-content a {
   color: #0077ff;
