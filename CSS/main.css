@@ -216,6 +216,8 @@ header {
 .live h2 {
   font-size: 20px;
   margin-bottom: 10px;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
 }
 
 .video {
@@ -254,8 +256,8 @@ header {
   border-radius: 50%;
   background: red;
   box-shadow: 0 0 30px red;
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
   animation: blink 1s infinite;
 }
 
