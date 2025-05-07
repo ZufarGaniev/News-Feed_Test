@@ -207,8 +207,10 @@ header {
 
 .live {
   max-width: 1450px;
-  width: 100%;
+  width: 80%;
   margin: 0 auto;
+  padding-left: 20px;
+  box-sizing: border-box;
 }
 
 .live h2 {
@@ -219,9 +221,12 @@ header {
 .video {
   background: white;
   padding: 0;
+  width: 560px;
   padding-bottom: 10px;
   position: relative;
   margin-bottom: 10px;
+  background-color: #F4F4F4;
+  border-radius: 10px;
 }
 
 .info {
@@ -235,7 +240,35 @@ header {
   color: red;
   font-size: 12px;
   margin-top: 10px;
+  font-weight: bold;
   margin-bottom: 10px;
+}
+
+.live-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* расстояние между кружком и текстом */
+}
+
+.live_icon {
+  border-radius: 50%;
+  background: red;
+  box-shadow: 0 0 30px red;
+  width: 15px;
+  height: 15px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .subtext {
