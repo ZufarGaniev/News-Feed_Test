@@ -1,11 +1,9 @@
-import renderNews from './renderNews';
-
 const API_KEY = 'pub_8501869c09275ad14ce7a068052c754a53d05';
 
 async function getNews(category = 'top') {
   const url = category === 'all'
-    ? `https://newsdata.io/api/1/news?country=ru&language=ru&apikey=${API_KEY}`
-    : `https://newsdata.io/api/1/news?country=ru&language=ru&category=${category}&apikey=${API_KEY}`;
+  ? `https://newsdata.io/api/1/news?country=ru&language=ru&apikey=${API_KEY}`
+  : `https://newsdata.io/api/1/news?country=ru&language=ru&category=${category}&apikey=${API_KEY}`;
 
   try {
     const response = await fetch(url);
@@ -19,16 +17,46 @@ async function getNews(category = 'top') {
   }
 }
 
+
+function renderNews(articles) {
+  const container = document.getElementById('grid-container');
+  container.innerHTML = '';
+
+  const validArticles = articles;
+
+  if (!validArticles.length) {
+    container.innerHTML = '<p>Нет новостей с изображениями по выбранной категории.</p>';
+    return;
+  }
+
+  validArticles.forEach(article => {
+    const card = document.createElement('div');
+    card.className = 'news-card';
+    card.innerHTML = `
+      <img src="${article.image_url || '/img/Заглушка.png'}"  alt="Изображение" class="news-image" />
+      <div class="news-content">
+        <h3>${article.title}</h3>
+        <p>${article.description || 'Описание отсутствует'}</p>
+        <a href="${article.link}" target="_blank">Читать далее</a>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+
 // Обработчик кнопок
 document.addEventListener('DOMContentLoaded', () => {
   const nav = document.getElementById('category-filter');
 
   nav.addEventListener('click', (e) => {
     if (e.target.tagName === 'BUTTON') {
-      document.querySelectorAll('.category-btn').forEach((btn) => btn.classList.remove('active'));
+      document.querySelectorAll('.category-btn').forEach(btn =>
+        btn.classList.remove('active')
+      );
       e.target.classList.add('active');
 
-      const { category } = e.target.dataset;
+      const category = e.target.dataset.category;
       getNews(category);
     }
   });
@@ -36,4 +64,5 @@ document.addEventListener('DOMContentLoaded', () => {
   getNews(); // Загрузить "top" по умолчанию
 });
 
-export default getNews;
+
+

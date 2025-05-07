@@ -192,7 +192,7 @@ header {
 
 
 .news-content a {
-  margin-top: auto; /* ключ к успеху */
+  margin-top: auto;
   color: #0077ff;
   font-weight: 500;
   text-decoration: none;
@@ -249,7 +249,7 @@ header {
 .live-indicator {
   display: flex;
   align-items: center;
-  gap: 8px; /* расстояние между кружком и текстом */
+  gap: 8px;
 }
 
 .live_icon {
