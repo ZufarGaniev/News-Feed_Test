@@ -2,8 +2,8 @@ const API_KEY = 'pub_8501869c09275ad14ce7a068052c754a53d05';
 
 async function getNews(category = 'top') {
   const url = category === 'all'
-  ? `https://newsdata.io/api/1/news?country=ru&language=ru&apikey=${API_KEY}`
-  : `https://newsdata.io/api/1/news?country=ru&language=ru&category=${category}&apikey=${API_KEY}`;
+    ? `https://newsdata.io/api/1/news?country=ru&language=ru&apikey=${API_KEY}`
+    : `https://newsdata.io/api/1/news?country=ru&language=ru&category=${category}&apikey=${API_KEY}`;
 
   try {
     const response = await fetch(url);
@@ -17,7 +17,6 @@ async function getNews(category = 'top') {
   }
 }
 
-
 function renderNews(articles) {
   const container = document.getElementById('grid-container');
   container.innerHTML = '';
@@ -29,7 +28,7 @@ function renderNews(articles) {
     return;
   }
 
-  validArticles.forEach(article => {
+  validArticles.forEach((article) => {
     const card = document.createElement('div');
     card.className = 'news-card';
     card.innerHTML = `
@@ -44,19 +43,16 @@ function renderNews(articles) {
   });
 }
 
-
 // Обработчик кнопок
 document.addEventListener('DOMContentLoaded', () => {
   const nav = document.getElementById('category-filter');
 
   nav.addEventListener('click', (e) => {
     if (e.target.tagName === 'BUTTON') {
-      document.querySelectorAll('.category-btn').forEach(btn =>
-        btn.classList.remove('active')
-      );
+      document.querySelectorAll('.category-btn').forEach((btn) => btn.classList.remove('active'));
       e.target.classList.add('active');
 
-      const category = e.target.dataset.category;
+      const { category } = e.target.dataset;
       getNews(category);
     }
   });
@@ -64,5 +60,4 @@ document.addEventListener('DOMContentLoaded', () => {
   getNews(); // Загрузить "top" по умолчанию
 });
 
-
-
+export default getNews;
