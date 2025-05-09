@@ -45,6 +45,7 @@ function renderNews(articles) {
 
 // Обработчик кнопок
 document.addEventListener('DOMContentLoaded', () => {
+  
   const nav = document.getElementById('category-filter');
 
   document.addEventListener('click', (e) => {

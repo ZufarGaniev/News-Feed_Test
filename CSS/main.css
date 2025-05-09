@@ -25,6 +25,10 @@ header {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.news-card:nth-child(10) {
+  display: none;
+}
+
 @media (max-width: 1520px) {
   .header__container,
   .footer__container {
@@ -218,6 +222,7 @@ header .category-btn.active {
   margin: 0 auto;
   padding-left: 20px;
   box-sizing: border-box;
+  margin-top: 30px;
 }
 
 .live h2 {
@@ -314,7 +319,7 @@ footer {
 
 .footer__logo{
   height: calc(100% - 50px);
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 .footer__text {
