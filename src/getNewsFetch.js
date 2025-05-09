@@ -47,15 +47,15 @@ function renderNews(articles) {
 document.addEventListener('DOMContentLoaded', () => {
   const nav = document.getElementById('category-filter');
 
-  nav.addEventListener('click', (e) => {
-    if (e.target.tagName === 'BUTTON') {
+  document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('category-btn')) {
       document.querySelectorAll('.category-btn').forEach((btn) => btn.classList.remove('active'));
       e.target.classList.add('active');
-
+  
       const { category } = e.target.dataset;
       getNews(category);
     }
-  });
+  });  
 
   getNews(); // Загрузить "top" по умолчанию
 });
