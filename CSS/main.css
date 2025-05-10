@@ -298,6 +298,73 @@ header .category-btn.active {
   font-size: 18px;
 }
 
+.subscribe {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #F4F4F4;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+}
+
+.subscribe h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1B254E;
+  margin-bottom: 20px;
+}
+
+.subscribe h4 {
+  font-size: 13px;
+  font-weight: normal;
+  color: #828282;
+  margin-bottom: 20px;
+}
+
+.subscribe input[type="email"],
+.subscribe select {
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: "Inter", sans-serif;
+  box-sizing: border-box;
+  transition: border 0.3s ease;
+}
+
+.subscribe input[type="email"]:focus,
+.subscribe select:focus {
+  border-color: #1FBAE5;
+  outline: none;
+}
+
+.subscribe button {
+  background-color: #E26309;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.subscribe button:hover {
+  background-color: #159fc4;
+}
+
+#subscribe-msg {
+  margin-top: 16px;
+  font-size: 14px;
+  color: #1B254E;
+  font-weight: 500;
+}
+
 /* Футер */
 footer {
   background-color: #1B254E;
